@@ -1,0 +1,94 @@
+# # Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+
+add_newline = true
+
+format = """$time $all"""
+
+[character] # The name of the module we are configuring is "character"
+success_symbol = "[➜](white)"
+error_symbol = "[➜](red)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+
+# [custom.emoji]
+# description = "Displays a (pseudo) random emoji for each prompt"
+# command = "EMOJIS=(⛵️ 🛰 🪐 🚀 🧡 🔭 🌍 💫 ☄️ ✨ 🌠 🌌 ⭐️); EMOJI_INDEX=$(( $RANDOM % 12 + 0 )); echo ${EMOJIS[$EMOJI_INDEX]}"
+# when = "1"
+# shell = ["cmd /C"]
+# format = "$output"
+
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[git_branch]
+symbol = "🌱 "
+truncation_length = 4
+truncation_symbol = ""
+# ignore_branches = ["master", "main"]
+format = "[](fg:#ffffff bg:none)[🌱](fg:#282c34 bg:#ffffff)[](fg:#ffffff bg:#24c90a)[ $branch]($style)[](fg:#24c90a bg:none) "
+style = "fg:#ffffff bg:#24c90a"
+
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "🔖 "
+format = "[\\($hash\\)]($style) [\\($tag\\)]($style)"
+style = "green"
+
+[git_status]
+format="[](fg:#ffffff bg:none)[🥶](fg:#282c34 bg:#ffffff)[ ](fg:#ffffff bg:#4da0ff)[$modified](fg:#282c34 bg:#4da0ff)[$untracked](fg:#282c34 bg:#4da0ff)[$staged](fg:#282c34 bg:#4da0ff)[$renamed](fg:#282c34 bg:#4da0ff)[](fg:#4da0ff bg:none)"
+conflicted = ""
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+up_to_date = "🥰"
+untracked = "🤷"
+stashed = "📦"
+modified = "📝"
+renamed = "👅"
+deleted = "🗑️"
+style = "red"
+disabled = false
+
+# [git_state]
+# rebase = "REBASING"
+# merge =	"MERGING"
+# revert = "REVERTING"
+# cherry_pick = "CHERRY-PICKING"
+# bisect = "BISECTING"
+# am = "AM"
+# am_or_rebase = "AM/REBASE"
+# style =	"yellow"
+# format = '\([$state( $progress_current/$progress_total)]($style)\) '
+# disabled = true
+
+
+[directory]
+format = "[](fg:#ffffff bg:none)[✨](fg:#282c34 bg:#ffffff)[](fg:#ffffff bg:#ffc32b)[ $path]($style)[](fg:#ffc32b bg:none) "
+style = "fg:#ffffff bg:#ffc32b"
+truncation_length = 3
+truncate_to_repo=false
+home_symbol = ""
+
+[nodejs]
+symbol = "🤖 "
+disabled = true
+
+[package] 
+symbol = "📦 "
+disabled = true
+
+[python]
+symbol = "🐍 "
+
+[rust]
+symbol = "🦀 "
+
+[time]
+disabled = false
+format="[](fg:#ffffff bg:none)[💖](fg:#282c34 bg:#ffffff)[](fg:#ffffff bg:#f72851)[ $time]($style)[](fg:#f72851 bg:none)"
+time_format = "%T"
+style="fg:#ffffff bg:#f72851"
