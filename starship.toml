@@ -6,22 +6,9 @@ add_newline = true
 
 format = """$time $all"""
 
-[character] # The name of the module we are configuring is "character"
+[character]
 success_symbol = "[➜](white)"
 error_symbol = "[➜](red)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
-
-
-# [custom.emoji]
-# description = "Displays a (pseudo) random emoji for each prompt"
-# command = "EMOJIS=(⛵️ 🛰 🪐 🚀 🧡 🔭 🌍 💫 ☄️ ✨ 🌠 🌌 ⭐️); EMOJI_INDEX=$(( $RANDOM % 12 + 0 )); echo ${EMOJIS[$EMOJI_INDEX]}"
-# when = "1"
-# shell = ["cmd /C"]
-# format = "$output"
-
-[battery]
-full_symbol = "🔋 "
-charging_symbol = "⚡️ "
-discharging_symbol = "💀 "
 
 [git_branch]
 symbol = "🌱 "
@@ -30,7 +17,6 @@ truncation_symbol = ""
 # ignore_branches = ["master", "main"]
 format = "[](fg:#ffffff bg:none)[🌱](fg:#282c34 bg:#ffffff)[](fg:#ffffff bg:#24c90a)[ $branch]($style)[](fg:#24c90a bg:none) "
 style = "fg:#ffffff bg:#24c90a"
-
 
 [git_commit]
 commit_hash_length = 4
@@ -90,5 +76,12 @@ symbol = "🦀 "
 [time]
 disabled = false
 format="[](fg:#ffffff bg:none)[💖](fg:#282c34 bg:#ffffff)[](fg:#ffffff bg:#f72851)[ $time]($style)[](fg:#f72851 bg:none)"
-time_format = "%T"
+time_format = "%T" #change to %R to only have HH:MM
 style="fg:#ffffff bg:#f72851"
+
+# [custom.emoji]
+# description = "Displays a (pseudo) random emoji for each prompt"
+# command = "EMOJIS=(⛵️ 🛰 🪐 🚀 🧡 🔭 🌍 💫 ☄️ ✨ 🌠 🌌 ⭐️); EMOJI_INDEX=$(( $RANDOM % 12 + 0 )); echo ${EMOJIS[$EMOJI_INDEX]}"
+# when = "1"
+# shell = ["cmd /C"]
+# format = "$output"
