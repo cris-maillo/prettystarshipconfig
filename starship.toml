@@ -8,7 +8,7 @@ format = """$time $all"""
 
 [character]
 success_symbol = "[➜](white)"
-error_symbol = "[➜](red)" # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[➜](red)"
 
 [git_branch]
 symbol = "🌱 "
